@@ -1,0 +1,12 @@
+steps to deploy model in AWS Elastic Beanstalk
+
+1. main python file name should be application.py
+2. flask object name should be application
+3. create a empty file '.ebignore'. It holds name of files which is not pushed to cloud. It's not mandatery step
+4. create a requirements.txt  file
+5. createa folder & name it '.ebextensions'
+6. Inside '.ebextensions' , create a new file  'python.config'
+7. In 'python.config' file
+      option_settings:
+              "aws:elasticbeanstalk:container:python":
+                WSGIPath:application:application
